@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+</head>
+<body>
+    <div>
+        Faça uma função anônima com ES6, armazenada na variável descobrirDiametro...
+    </div>
+    <script>
+
+        // Atribuição de uma função anônima à variável 'descobrirDiametro'.
+        // O parâmetro 'raio' será utilizado para o cálculo matemático.
+        descobrirDiametro = function (raio) {
+            // O JavaScript realiza a precedência de operadores: 
+            // primeiro multiplica 2 pelo raio e depois concatena com a string.
+            return '<br/><strong>O diâmetro é: </strong>' + 2 * raio;
+        }
+
+        // Chamada da função passando o valor 5 como argumento.
+        // O resultado esperado no browser será "O diâmetro é: 10".
+        document.write(descobrirDiametro(5));
+
+    </script>
+</body>
+</html>

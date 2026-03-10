@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <div>
+        01 - Escreva código com ES6 diretamente em uma página HTML...
+        </div>
+
+    <script>
+        // Definição da classe usando a sintaxe moderna do ES6
+        class Carro {
+            // O método constructor é chamado automaticamente quando criamos um 'new Carro'
+            constructor(nome, ano) {
+                this.nome = nome; // 'this' refere-se à instância que está sendo criada
+                this.ano = ano;   // Atribui o valor recebido por parâmetro à propriedade do objeto
+            }
+        }
+
+        // Criação de uma instância (objeto) da classe Carro
+        // Note que aqui a variável 'esteCarro' foi declarada globalmente (sem let/const)
+        esteCarro = new Carro("Mustang", "2014");
+
+        // Exibe o resultado diretamente no corpo do documento HTML
+        // O "</br>" força uma quebra de linha antes do texto
+        document.write("</br>" + esteCarro.nome + " " + esteCarro.ano);
+    </script>
+    <br>
+</body>
+</html>

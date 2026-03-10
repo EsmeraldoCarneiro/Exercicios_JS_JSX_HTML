@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+</head>
+<body>
+    <div>
+        Faça uma função anônima com ES6, armazenada na variável mostrarFrase...
+    </div>
+    <script>
+
+        // Atribuição de uma função anônima à variável 'mostraFrase'.
+        // Diferente de uma declaração de função comum (function nome(){}), 
+        // esta só pode ser chamada após esta linha no código.
+        mostraFrase = function (nome, sobrenome) {
+            // Retorna uma string concatenada. 
+            // O uso de 'return' permite que o resultado seja tratado antes da exibição.
+            return '<br/>Olá, Eu sou ' + nome + ' ' + sobrenome + '.';
+        }
+
+        // Execução da função passando os argumentos "Esmeraldo" e "Junior".
+        // O resultado do retorno é enviado diretamente para o método document.write.
+        document.write(mostraFrase("Esmeraldo", "Junior"));
+        
+    </script>
+</body>
+</html>

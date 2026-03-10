@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+<body>
+    <div>
+        Crie uma classe chamada "Quadrado" com ES6...
+    </div>
+    <script>
+
+        // Classe Base representando uma forma geométrica genérica
+        class Poligono {
+            constructor(altura, largura) {
+                this.altura = altura;
+                this.largura = largura;
+            }
+
+            // Método simples que retorna uma identificação
+            mostrarNome() {
+                return "<br/>Olá, eu sou um Polígono."
+            }
+        }
+
+        // Subclasse Quadrado que especializa o Polígono
+        class Quadrado extends Poligono {
+            // O construtor recebe altura, largura e um comprimento adicional
+            constructor(altura, largura, comprimento) {
+                // 'super' repassa altura e largura para o construtor do Poligono
+                super(altura, largura);
+                this.comprimento = comprimento;
+            }
+
+            // Método específico para a identificação do quadrado
+            mostrar() {
+                return "<br/>Olá, eu sou um Quadrado ";
+            }
+
+            // O 'get' define um acessor de propriedade. 
+            // Ele permite chamar 'quadrado.area' sem parênteses, como se fosse um atributo.
+            get area() {
+                // O parseFloat garante que os valores sejam tratados como números para o cálculo
+                return "<br/>A área do quadrado é: " + parseFloat(this.altura) * parseFloat(this.largura)
+            }
+        }
+
+        // Instanciação e execução
+        poligono = new Poligono(2, 2);
+        document.write(poligono.mostrarNome());
+
+        // Criação do objeto Quadrado (passando altura 1, largura 2 e comprimento 3)
+        quadrado = new Quadrado(1, 2, 3);
+        document.write(quadrado.mostrar());
+        
+        // Chamada do Getter 'area'. Repare que não usamos 'area()'
+        document.write(quadrado.area);
+
+    </script>
+</body>
+</html>

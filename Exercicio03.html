@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+
+<body>
+    <div>
+        Crie uma classe chamada "FuncionarioComissionado"...
+    </div>
+    <script>
+
+        // Classe Pai (Base): Define as propriedades comuns a todos os funcionários
+        class Funcionario {
+            constructor(nome, numCTPS, salario) {
+                this.nome = nome;
+                this.numCTPS = numCTPS;
+                this.salario = salario;
+            }
+
+            // Método que retorna uma string formatada com os dados básicos
+            mostrarDados() {
+                return '<br/><strong>Dados do funcionário </strong></br><br><strong>Nome: </strong>' + this.nome + '<br/><strong>Número CTPS: </strong>' + this.numCTPS + '</br><strong>Salário: </strong>' + this.salario + '<br>';
+            }
+        }
+
+        // Classe Filha (Subclasse): Herda de Funcionario usando a palavra-chave 'extends'
+        class FuncionarioComissionado extends Funcionario {
+            constructor(nome, numCTPS, salario, venda, comissao) {
+                // O 'super' invoca o construtor da classe pai para inicializar nome, numCTPS e salario
+                super(nome, numCTPS, salario);
+                // Propriedades específicas da classe comissionada
+                this.venda = venda;
+                this.comissao = comissao;
+            }
+
+            // Método que estende a funcionalidade do pai
+            mostrar() {
+                // Reaproveita o retorno do método mostrarDados() da classe pai e concatena novos dados
+                return this.mostrarDados() + '<strong>Venda: </strong>' + this.venda + '</br><strong>Comissao: </strong>' + this.comissao;
+            }
+        }
+
+        // Instanciação da classe base
+        funcionario = new Funcionario("Antonio Gomes", "45654-1", "R$ 5.100,00");
+        document.write(funcionario.mostrarDados());
+
+        // Instanciação da classe derivada com os parâmetros adicionais
+        funcionarioComissionado = new FuncionarioComissionado("Andre Farias", "12545-0", "R$ 5.610,00", "10", "1%");
+        document.write(funcionarioComissionado.mostrar());
+
+    </script>
+</body>
+</html>

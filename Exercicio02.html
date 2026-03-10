@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+
+<body>
+    <div>
+        Escreva código com ES6 diretamente em uma página HTML para criar uma classe chamada "Carro"...
+    </div>
+    <script>
+        // Definição da classe Carro seguindo a especificação ES6
+        class Carro {
+            // O construtor recebe apenas o parâmetro 'ano' conforme solicitado
+            constructor(ano) {               
+                this.ano = ano; // Armazena o valor do parâmetro na propriedade da instância
+            }
+
+            // Criação de um método dentro da classe para retornar a string formatada
+            // Nota: No enunciado pedia "mostraIdade()", mas aqui foi implementado como "apresentar()"
+            apresentar() {
+                // O método utiliza o 'this.ano' para acessar o valor guardado no objeto
+                return '<br>O meu carro tem ' + this.ano + ' anos.';
+            }
+        }
+
+        // Instanciação do objeto passando o valor 5 para o construtor
+        // O objeto 'esteCarro' agora possui a propriedade ano = 5 e o método apresentar()
+        esteCarro = new Carro(5);
+
+        // Chamada do método apresentar() e escrita do retorno diretamente no HTML
+        document.write(esteCarro.apresentar());
+    </script>
+</body>
+</html>
